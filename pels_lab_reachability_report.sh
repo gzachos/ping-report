@@ -39,4 +39,4 @@ done
 echo "\033[1;33m \n $UNREACHABLE ULTRA20 workstations are unreachable! \033[0m \n"
 
 # Finally, the total amount of the unreachable workstations is printed to console.
-echo "\033[1;33m $UNREACHABLE out of the 22 workstations at lab \"PELS\" are unreachable! \033[0m \n"
+echo "\033[1;33m $UNREACHABLE out of the 23 workstations at lab \"PELS\" are unreachable! \033[0m \n"
