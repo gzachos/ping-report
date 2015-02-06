@@ -14,4 +14,6 @@ Shell
 
 Comments
 -----
-Scripts should be executed on a laboratory workstation and not on Scylla.
+ * [See an example of the script ouput](images/pels_ping_report.png)
+ * Scripts should be executed on a laboratory workstation and not on Scylla.
+
