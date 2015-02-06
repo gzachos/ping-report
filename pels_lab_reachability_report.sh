@@ -1,15 +1,24 @@
 #!/bin/sh
 # Created by George Z. Zachos
 
-# Initial messages are printed to console.
-echo "\n\n"
+# Values for text coloration
+OR="\033[1;33m" # Orange/Yellow
+RD="\033[1;31m" # Red
+GN="\033[32m"   # Green
+CY="\033[1;36m" # Cyan
+GR="\033[1;30m" # Grey
+NC="\033[0m"    # No-color
 
-echo "\033[1;33m Checking the reachability of all workstations at lab \"PELS\" \033[0m \n\n"
-
-echo "\033[1;33m *** ULTRA20 WORKSTATIONS *** \033[0m \n"
+# An initial message is printed to console.
+echo "\n\n ${OR}Checking the reachability of all workstations in \"${CY}PELS${OR}\" lab ${NC}"
 
 # "PELS" lab is equiped with 22 ULTRA20(SUN) workstations.
 # Their hostnames are ultra20wsXX, with XX in [17,39].
+
+################################# ULTRA20 #################################
+
+echo "\n\n ${OR}*** ULTRA20 WORKSTATIONS ***${NC}\n"
+
 NUM=17
 UNREACHABLE=0
 
@@ -27,16 +36,20 @@ do
 	# is unreachable and the appropriate feedback is printed to console.
 	if [ $? -ne 0 ]
 	then
-		echo "\033[1;31m ultra20ws$NUM is unreachable!\033[0m"
+		echo "${RD} ultra20ws$NUM is unreachable! ${NC}"
 		UNREACHABLE=$((UNREACHABLE+1))
 	else
-		echo "\033[32m ultra20ws$NUM \033[0m"
+		echo "${GN} ultra20ws$NUM ${NC}"
 	fi
 	NUM=$((NUM+1))
 done
 
-# The amount of the ULTRA20 unreachable workstations is printed to console.
-echo "\033[1;33m \n $UNREACHABLE ULTRA20 workstations are unreachable! \033[0m \n"
+# The number of the unreachable ULTRA20 workstations is printed to console.
+echo "\n ${OR}$UNREACHABLE ${CY}ULTRA20 workstations are unreachable! ${NC}"
 
-# Finally, the total amount of the unreachable workstations is printed to console.
-echo "\033[1;33m $UNREACHABLE out of the 23 workstations at lab \"PELS\" are unreachable! \033[0m \n"
+################################# SUMMARY  #################################
+
+# Finally, the total number of the unreachable workstations is printed to console.
+echo "\n ${RD}$UNREACHABLE ${OR}out of the ${CY}23${OR} workstations in \"${CY}PELS${OR}\" lab are unreachable! ${NC}"
+
+echo "\n ${GR}###################### END OF REPORT  ###################### ${NC}\n"
