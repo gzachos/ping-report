@@ -11,9 +11,8 @@ Developed on Debian Linux 6.0.1 (squeeze)
 Shell
 -----
 - Bourne shell (sh)
-
+![See an example of the script ouput](images/pels_ping_report.png)
 Comments
 -----
- * [See an example of the script ouput](images/pels_ping_report.png)
- * Scripts should be executed on a laboratory workstation and not on Scylla.
+Scripts should be executed on a laboratory workstation and not on Scylla.
 
