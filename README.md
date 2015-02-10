@@ -14,7 +14,10 @@ Shell
 
 Screenshot
 ----------
-![See an example of the script ouput](images/pels_ping_report.png)
+PELS lab script ouput<br>
+![PELS lab script ouput](images/pels_ping_report.png)
+<br>Example output of the ugrad_lab reachability report script<br>
+![Example output of ugrad_lab ping report script](images/general_ping_report.png)
 
 Comments
 -----
