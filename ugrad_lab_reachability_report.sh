@@ -110,12 +110,6 @@ while [ $OPTI7020_NUM -le 25 ]
 do
         if [ $OPTI7020_NUM -le 9 ]
         then
-                # The STDOUT stream of the ping command is redirected to /dev/null,
-                # while the STDERR stream is redirected to STDOUT. 
-                # Consequently, nothing is printed to console.
-                # Explaining '2>&1':
-                # '1' is the file descriptor of STDOUT stream and '2' of the STDERR.
-                # '&' indicates that what follows is a file descriptor and not a filename.
                 ping -q -c 2 opti7020ws0$OPTI7020_NUM > /dev/null 2>&1
                 # if the exit code of the ping command differs from zero(0), the workstation
                 # is unreachable and the appropriate feedback is printed to console.
