@@ -133,7 +133,7 @@ do
         OPTI7020_NUM=$((OPTI7020_NUM+1))
 done
 
-# The number of the unreachable OPTI7020 workstations is printed to console.
+# The number of the unreachable OPTI7020 workstations in PEP-II is printed to console.
 echo "\n ${OR}$UNREACHABLE_OPTI7020 ${CY}OPTI7020 workstations are unreachable! ${NC}"
 
 ################################# OPTI7010 #################################
@@ -158,7 +158,7 @@ do
         OPTI7010_NUM=$((OPTI7010_NUM+1))
 done
 
-# The number of the unreachable OPTI7010 workstations is printed to console.
+# The number of the unreachable OPTI7010 workstations in PEP-II is printed to console.
 echo "\n ${OR}$UNREACHABLE_OPTI7010 ${CY}OPTI7010 workstations are unreachable! ${NC}"
 
 #################### SUMMARY for PEP-II Lab ####################
@@ -197,12 +197,6 @@ do
                 ULTRA20_NUM=$((ULTRA20_NUM+1))
                 continue
         fi
-        # The STDOUT stream of the ping command is redirected to /dev/null,
-        # while the STDERR stream is redirected to STDOUT.
-        # Consequently, nothing is printed to console.
-        # Explaining '2>&1':
-        # '1' is the file descriptor of STDOUT stream and '2' of the STDERR.
-        # '&' indicates that what follows is a file descriptor and not a filename.
         ping -q -c 2 ultra20ws$ULTRA20_NUM > /dev/null 2>&1
         # if the exit code of the ping command differs from zero(0), the workstation
         # is unreachable and the appropriate feedback is printed to console.
@@ -216,7 +210,7 @@ do
         ULTRA20_NUM=$((ULTRA20_NUM+1))
 done
 
-# The number of the unreachable ULTRA20 workstations is printed to console.
+# The number of the unreachable ULTRA20 workstations in PELS is printed to console.
 echo "\n ${OR}$UNREACHABLE_ULTRA20 ${CY}ULTRA20 workstations are unreachable! ${NC}"
 
 ################################# HP6000 #################################
@@ -226,15 +220,9 @@ echo "\n\n ${OR}*** HP6000 WORKSTATIONS ***${NC}\n"
 HP6000_NUM=1
 UNREACHABLE_HP6000=0
 
-# For each hostname from hp6000ws11 to hp6000ws29
+# For each hostname from hp6000ws01 to hp6000ws07
 while [ $HP6000_NUM -le 7 ]
 do
-        # The STDOUT stream of the ping command is redirected to /dev/null,
-        # while the STDERR stream is redirected to STDOUT.
-        # Consequently, nothing is printed to console.
-        # Explaining '2>&1':
-        # '1' is the file descriptor of STDOUT stream and '2' of the STDERR.
-        # '&' indicates that what follows is a file descriptor and not a filename.
         ping -q -c 2 hp6000ws0$HP6000_NUM > /dev/null 2>&1
         # if the exit code of the ping command differs from zero(0), the workstation
         # is unreachable and the appropriate feedback is printed to console.
@@ -248,7 +236,7 @@ do
         HP6000_NUM=$((HP6000_NUM+1))
 done
 
-# The number of the unreachable HP6000 workstations is printed to console.
+# The number of the unreachable HP6000 workstations in PELS lab is printed to console.
 echo "\n ${OR}$UNREACHABLE_HP6000 ${CY}HP6000 workstations are unreachable! ${NC}"
 
 #################### SUMMARY for PELS Lab ####################

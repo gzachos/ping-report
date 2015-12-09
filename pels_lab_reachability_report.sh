@@ -60,15 +60,9 @@ echo "\n\n ${OR}*** HP6000 WORKSTATIONS ***${NC}\n"
 HP6000_NUM=1
 UNREACHABLE_HP6000=0
 
-# For each hostname from hp6000ws11 to hp6000ws29
+# For each hostname from hp6000ws01 to hp6000ws07
 while [ $HP6000_NUM -le 7 ]
 do
-	# The STDOUT stream of the ping command is redirected to /dev/null,
-	# while the STDERR stream is redirected to STDOUT.
-	# Consequently, nothing is printed to console.
-	# Explaining '2>&1':
-	# '1' is the file descriptor of STDOUT stream and '2' of the STDERR.
-	# '&' indicates that what follows is a file descriptor and not a filename.
 	ping -q -c 2 hp6000ws0$HP6000_NUM > /dev/null 2>&1
 	# if the exit code of the ping command differs from zero(0), the workstation
 	# is unreachable and the appropriate feedback is printed to console.
