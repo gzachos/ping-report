@@ -133,7 +133,7 @@ do
         OPTI7020_NUM=$((OPTI7020_NUM+1))
 done
 
-# The number of the unreachable OPTI7020 workstations in PEP-II is printed to console.
+# The number of the unreachable OPTI7020 workstations in PEP-II lab is printed to console.
 echo "\n ${OR}$UNREACHABLE_OPTI7020 ${CY}OPTI7020 workstations are unreachable! ${NC}"
 
 ################################# OPTI7010 #################################
@@ -158,7 +158,7 @@ do
         OPTI7010_NUM=$((OPTI7010_NUM+1))
 done
 
-# The number of the unreachable OPTI7010 workstations in PEP-II is printed to console.
+# The number of the unreachable OPTI7010 workstations in PEP-II lab is printed to console.
 echo "\n ${OR}$UNREACHABLE_OPTI7010 ${CY}OPTI7010 workstations are unreachable! ${NC}"
 
 #################### SUMMARY for PEP-II Lab ####################
@@ -210,7 +210,7 @@ do
         ULTRA20_NUM=$((ULTRA20_NUM+1))
 done
 
-# The number of the unreachable ULTRA20 workstations in PELS is printed to console.
+# The number of the unreachable ULTRA20 workstations in PELS lab is printed to console.
 echo "\n ${OR}$UNREACHABLE_ULTRA20 ${CY}ULTRA20 workstations are unreachable! ${NC}"
 
 ################################# HP6000 #################################
